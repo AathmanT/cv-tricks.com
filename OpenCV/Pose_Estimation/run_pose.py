@@ -68,7 +68,7 @@ out = net.forward()
 print("time is ",time.time()-start_t)
 # print(inp.shape)
 kwinName="Pose Estimation Demo: Cv-Tricks.com"
-cv.namedWindow(kwinName, cv.WINDOW_AUTOSIZE)
+# cv.namedWindow(kwinName, cv.WINDOW_AUTOSIZE)
 #assert(len(BODY_PARTS) == out.shape[1])
 
 points = []
@@ -104,6 +104,6 @@ for pair in POSE_PAIRS:
 t, _ = net.getPerfProfile()
 freq = cv.getTickFrequency() / 1000
 cv.putText(frame, '%.2fms' % (t / freq), (10, 20), cv.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255),2,cv.LINE_AA)
-
-cv.imshow(kwinName, frame)
+# cv_imshow(kwinName, frame)
 cv.imwrite('result_'+args.input,frame)
+print("done")
